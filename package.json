@@ -1,0 +1,29 @@
+{
+    "name": "practica4",
+    "description": "",
+    "version": "0.0.1",
+    "main": "./app.js",
+    "author": {
+        "name": "krosh118",
+        "email": "stockmetal118@hotmail.com"
+    },
+    "scripts": {
+        "start": "node app.js"
+    },
+    "keywords": [],
+    "licenses": {
+        "type": "none"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/krosh118/practica4.git"
+    },
+    "bugs": {
+        "url": "http://github.com/krosh118/practica4/issues"
+    },
+    "dependencies": {
+        "express": "3.4.7",
+        "jade": "*",
+        "stylus": "*"
+    }
+}
