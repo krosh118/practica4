@@ -5,12 +5,12 @@ block content
         .row
             .col-xs-10.col-sm-6.col-md-4.center
                 form.form-signin.text-center(action="/login", method="post")
-                    h2.form-signin-heading Ingresa tus datos
+                    h2.custom Inicio de sesión
                     br
-                    input.input-block-level(type="text", name="username", placeholder="Usuario" required)
+                    input.input-block-level.center(type="text", name="username", placeholder="Usuario" required)
                     br
                     br
-                    input.input-block-level(type="password", name="password", placeholder="Contraseña" required)
+                    input.input-block-level.center(type="password", name="password", placeholder="Contraseña" required)
                     label.checkbox.
                         <input type="checkbox" value="remember-me" /> Recordarme
                     button.btn.btn-large.btn-primary(type="submit") Iniciar sesión

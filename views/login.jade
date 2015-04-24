@@ -4,3 +4,7 @@ block content
   h1= title
   p Pantalla de login
   p El nombre es #{nombre}
+  p El usuario es #{usuario}
+    form(method="post", action="sesiones")
+        input(type="text",name="sesion",placeholder="Introduce algo")
+        input(type="submit",value="Crear sesión")

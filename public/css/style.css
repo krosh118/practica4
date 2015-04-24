@@ -14,7 +14,7 @@ a {
 
 .form-signin{
     background-color: #85a9e3;
-    border-color: #cc0f0f;
+    border-color: #337ab7;
     border-style: solid;
     border-radius: 25px;
 }
@@ -27,4 +27,19 @@ a {
     float: none;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
+}
+
+footer {
+    color: #fff;
+}
+
+@font-face {
+    font-family: 'Roboto'; /*a name to be used later*/
+    src: url('/fonts/Roboto-Regular.ttf'); /*URL to font*/
+}
+
+.custom {
+    font-family: 'Roboto';
+    color: #fff;
 }
