@@ -7,7 +7,7 @@ var dbConfig = {
    host:'localhost',
    user:'root',
    password:'',
-   database:'sigepsa'
+   database:'practica4'
 };
 
 var runQuery = function(Query,Data,callback){
@@ -42,7 +42,7 @@ DB.prototype.getSingleData = function(data,callback){
 
 DB.prototype.getCredencialesValidas = function(data,callback){
    var Query = queries.comprobarCredenciales;
-   var Data  = [data];
+   var Data  = data;
    runQuery(Query,Data,function(res){
       res = res.pop();
       callback(res);

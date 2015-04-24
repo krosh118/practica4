@@ -9,5 +9,5 @@ var SQLSAVESINGLEDATA = "INSERT INTO tabla ( " +
       "VALUES (?,?,?,?,?,?,?)";
 exports.SQLSAVESINGLEDATA = SQLSAVESINGLEDATA;
 
-var comprobarCredenciales = "SELECT * FROM usuario WHERE nombre = '?' AND password = '?';";
+var comprobarCredenciales = "SELECT * FROM usuario WHERE nombre = ? AND password = ?;";
 exports.comprobarCredenciales = comprobarCredenciales;

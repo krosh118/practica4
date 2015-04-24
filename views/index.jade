@@ -6,6 +6,7 @@ block content
             .col-xs-10.col-sm-6.col-md-4.center
                 form.form-signin.text-center(action="/login", method="post")
                     h2.custom Inicio de sesión
+                    p(style="color:FireBrick;") #{error}
                     br
                     input.input-block-level.center(type="text", name="nombre", placeholder="Usuario" required)
                     br
