@@ -40,6 +40,15 @@ DB.prototype.getSingleData = function(data,callback){
    });
 }
 
+DB.prototype.getCredencialesValidas = function(data,callback){
+   var Query = queries.comprobarCredenciales;
+   var Data  = [data];
+   runQuery(Query,Data,function(res){
+      res = res.pop();
+      callback(res);
+   });
+}
+
 DB.prototype.saveSingleData = function(data){
    var Query = queries.SQLSAVESINGLEDATA;
    var Data  = data;
