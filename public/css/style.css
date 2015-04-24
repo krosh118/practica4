@@ -1,0 +1,30 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #373c42;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.bloque h1{
+    color: #ffffff;
+}
+
+.form-signin{
+    background-color: #85a9e3;
+    border-color: #cc0f0f;
+    border-style: solid;
+    border-radius: 25px;
+}
+
+.input-block-level{
+    width: 50%;
+}
+
+.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
