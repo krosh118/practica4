@@ -1,0 +1,34 @@
+extends layout
+
+block extraHeader
+    <script src="/js/jquery-2.1.3.min.js"></script>
+
+block content
+    .container-fluid
+        .row
+            .col-xs-10.col-sm-6.col-md-4.center.fondo
+                br
+                h1 Historial de rutas asignadas
+                br
+                table(align="center" border="1")
+                
+                    tr
+                        td  Bus:
+                        td  Placa:
+                        td  Origen:
+                        td  Destino:
+                        td  Estado:
+                        td  Fecha:
+                    
+                    each fila, i in filas
+                        tr
+                            td !{JSON.parse(JSON.stringify(fila)).BUS}
+                            td !{JSON.parse(JSON.stringify(fila)).PLACA}
+                            td !{JSON.parse(JSON.stringify(fila)).ORIGEN}
+                            td !{JSON.parse(JSON.stringify(fila)).DESTINO}
+                            td !{JSON.parse(JSON.stringify(fila)).ESTADO}
+                            td !{JSON.parse(JSON.stringify(fila)).FECHA}
+                br
+                
+                    
+                a(href='/') Cerrar sesión

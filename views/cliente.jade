@@ -1,12 +1,94 @@
 extends layout
 
+block extraHeader
+    <script src="/js/jquery-2.1.3.min.js"></script>
+
 block content
     .container-fluid
         .row
             .col-xs-10.col-sm-6.col-md-4.center.fondo
-                h1= title
-                p Pantalla de cliente
-                p El nombre es #{nombre}
-                p El password es #{password}
-                  
+                h1 Gestión de autobuses
+                form.form-nuevo-buses.text-center(action="/resultado", method="post")
+                    h2 Nuevo
+                    br
+                    label Número de placa:
+                        input.input-block-level.center(type="text", name="placa", placeholder="Placa" required)
+                    br
+                    br
+                    label Tipo de bus:
+                        select(name="tipo" required)
+                            option(value='1') Económico
+                            option(value='2') Empresarial
+                    br
+                    br
+                    label Capacidad del bus:
+                        select(name="capacidad" required)
+                            option(value='1') 45
+                            option(value='2') 35
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit" name="nuevo") Agregar bus
+                    br
+                    br
+                br
+                br
+                form.form-baja-buses.text-center(action="/eliminar", method="post")
+                    h2 Eliminar
+                    br
+                    label Número de placa:
+                        select(name="placaBorrar" required)
+                            each bus, i in buses
+                                option(value=JSON.parse(JSON.stringify(bus)).BUS) !{JSON.parse(JSON.stringify(bus)).PLACA}
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit") Eliminar bus
+                    br
+                    br
+                br
+                br
+                form.form-modifica-buses.text-center(action="/modificar", method="post")
+                    h2 Modificar
+                    br
+                    label Número de placa:
+                        select(name="placaModificar" required)
+                            each bus, i in buses
+                                option(value=JSON.parse(JSON.stringify(bus)).BUS ) !{JSON.parse(JSON.stringify(bus)).PLACA}
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit") Modificar bus
+                    br
+                    br
+                br
+                br
+                    
+        .row
+            .col-xs-10.col-sm-6.col-md-4.center.fondo
+                h1 Gestión de rutas
+                form.form-nuevo-buses.text-center(action="/nuevaRuta", method="post")
+                    h2 Nueva ruta
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit" name="nuevo") Crear nueva ruta
+                    br
+                    br
+                br
+                br
+                form.form-modifica-buses.text-center(action="/asignarRuta", method="post")
+                    h2 Asignar ruta
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit" name="nuevo") Asignar ruta
+                    br
+                    br
+                br
+                br
+                form.form-baja-buses.text-center(action="/historialRuta", method="post")
+                    h2 Ver historial de rutas
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit" name="nuevo") Crear nueva ruta
+                    br
+                    br
+                
+                    
                 a(href='/') Cerrar sesión

@@ -53,3 +53,15 @@ exports.obtenBus2 = obtenBus2;
 
 var updateBus = "UPDATE BUS SET PLACA = ?, TIPO = ?, CAPACIDAD = ? WHERE BUS = ?;";
 exports.updateBus = updateBus;
+
+var cargarRuta = "SELECT RUTA.RUTA as CODIGO, P1.NOMBRE as ORIGEN, P2.NOMBRE as DESTINO FROM RUTA, PUNTO P1, PUNTO P2 WHERE P1.PUNTO = RUTA.ORIGEN AND P2.PUNTO = RUTA.DESTINO;";
+exports.cargarRuta = cargarRuta;
+
+var actualizarRutaActual = "UPDATE BUS_RUTA SET ESTADO = 'VENCIDO' WHERE BUS = ? AND ESTADO = 'ACTIVO';";
+exports.actualizarRutaActual = actualizarRutaActual;
+
+var ingresarRutaActual = "INSERT INTO BUS_RUTA(BUS, RUTA, ESTADO) VALUES (?, ?, 'ACTIVO');";
+exports.ingresarRutaActual = ingresarRutaActual;
+
+var reporteAsignaciones = "SELECT BUS.BUS, BUS.PLACA, P1.NOMBRE AS ORIGEN, P2.NOMBRE AS DESTINO, BUS_RUTA.ESTADO, BUS_RUTA.FECHA FROM BUS, PUNTO P1, PUNTO P2, BUS_RUTA, RUTA WHERE P1.PUNTO = RUTA.ORIGEN AND P2.PUNTO = RUTA.DESTINO AND RUTA.RUTA = BUS_RUTA.RUTA AND BUS_RUTA.BUS = BUS.BUS;";
+exports.reporteAsignaciones = reporteAsignaciones;

@@ -15,6 +15,9 @@ var modificarBus = require('./routes/modificarBus');
 var nuevaRuta = require('./routes/nuevaRuta');
 var agregaPunto = require('./routes/agregaPunto');
 var crearRuta = require('./routes/crearRuta');
+var asignarRuta = require('./routes/asignarRuta');
+var relacionRutaBus = require('./routes/relacionRutaBus');
+var historialRuta = require('./routes/historialRuta');
 
 var app = express();
 
@@ -40,6 +43,9 @@ app.use('/modificarBus', modificarBus);
 app.use('/nuevaRuta', nuevaRuta);
 app.use('/agregaPunto', agregaPunto);
 app.use('/crearRuta', crearRuta);
+app.use('/asignarRuta', asignarRuta);
+app.use('/relacionRutaBus', relacionRutaBus);
+app.use('/historialRuta', historialRuta);
 
 
 // catch 404 and forward to error handler

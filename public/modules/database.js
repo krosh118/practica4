@@ -81,8 +81,28 @@ DB.prototype.cargarPuntosAAsociar2 = function(data,callback){
    });
 }
 
+DB.prototype.cargarAsignaciones = function(data,callback){
+   var Query = queries.reporteAsignaciones;
+   var Data  = data;
+   runQuery(Query,Data,function(res){
+      callback(res);
+   });
+}
+
 DB.prototype.saveSingleData = function(data){
    var Query = queries.SQLSAVESINGLEDATA;
+   var Data  = data;
+   runQuery(Query,Data);
+}
+
+DB.prototype.actuRutaActual = function(data){
+   var Query = queries.actualizarRutaActual;
+   var Data  = data;
+   runQuery(Query,Data);
+}
+
+DB.prototype.ingresaRutaActual = function(data){
+   var Query = queries.ingresarRutaActual;
    var Data  = data;
    runQuery(Query,Data);
 }
@@ -128,6 +148,14 @@ DB.prototype.obtenerBus = function(data,callback){
    var Data  = data;
    runQuery(Query,Data,function(res){
       res = res.pop();
+      callback(res);
+   });
+}
+
+DB.prototype.cargarRutas = function(data,callback){
+   var Query = queries.cargarRuta;
+   var Data  = data;
+   runQuery(Query,Data,function(res){
       callback(res);
    });
 }
