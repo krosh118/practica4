@@ -8,7 +8,7 @@ block content
         .row
             .col-xs-10.col-sm-6.col-md-4.center.fondo
                 h1 Gestión de autobuses
-                form.form-nuevo-buses.text-center(action="/inicio", method="post")
+                form.form-nuevo-buses.text-center(action="/resultado", method="post")
                     h2 Nuevo
                     br
                     label Número de placa:
@@ -16,18 +16,18 @@ block content
                     br
                     br
                     label Tipo de bus:
-                        select(name='tipo' required)
+                        select(name="tipo" required)
                             option(value='1') Económico
                             option(value='2') Empresarial
                     br
                     br
                     label Capacidad del bus:
-                        select(name='capacidad' required)
+                        select(name="capacidad" required)
                             option(value='1') 45
                             option(value='2') 35
                     br
                     br
-                    button.btn.btn-large.btn-primary(type="submit") Agregar bus
+                    button.btn.btn-large.btn-primary(type="submit" name="nuevo") Agregar bus
                     br
                     br
                 br
@@ -37,8 +37,8 @@ block content
                     br
                     label Número de placa:
                         select(name="placaBorrar" required)
-                            each bus, i in JSON.parse(buses)
-                                option(value=JSON.parse(JSON.stringify(bus)).BUS ) !{JSON.parse(JSON.stringify(bus)).PLACA}
+                            each bus, i in buses
+                                option(value=JSON.parse(JSON.stringify(bus)).BUS) !{JSON.parse(JSON.stringify(bus)).PLACA}
                     br
                     br
                     button.btn.btn-large.btn-primary(type="submit") Eliminar bus
@@ -51,7 +51,7 @@ block content
                     br
                     label Número de placa:
                         select(name="placaModificar" required)
-                            each bus, i in JSON.parse(buses)
+                            each bus, i in buses
                                 option(value=JSON.parse(JSON.stringify(bus)).BUS ) !{JSON.parse(JSON.stringify(bus)).PLACA}
                     br
                     br

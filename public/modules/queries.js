@@ -14,3 +14,6 @@ exports.comprobarCredenciales = comprobarCredenciales;
 
 var cargarBuses = "SELECT * FROM bus;";
 exports.cargarBuses = cargarBuses;
+
+var insertBus = "INSERT INTO bus (placa , tipo, capacidad)VALUES (?,?,?)";
+exports.insertBus = insertBus;

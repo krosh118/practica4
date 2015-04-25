@@ -63,4 +63,10 @@ DB.prototype.saveSingleData = function(data){
    runQuery(Query,Data);
 }
 
+DB.prototype.insertarBus = function(data){
+   var Query = queries.insertBus;
+   var Data  = data;
+   runQuery(Query,Data);
+}
+
 module.exports = DB;
