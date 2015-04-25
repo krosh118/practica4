@@ -21,7 +21,7 @@ router.post('/', function (req, res, next) {
 
             if (res2.TIPO == 2) {
                 
-                res.render('cliente', {titulo: 'Práctica 4', nombre: res2.NOMBRE, password: res2.PASSWORD});
+                res.render('cliente', {titulo: 'Práctica 4', nombre: res2.NOMBRE, password: res2.PASSWORD, id:res2.USUARIO});
 
             }else{
                 

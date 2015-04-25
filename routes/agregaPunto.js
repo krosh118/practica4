@@ -15,7 +15,7 @@ router.post('/', function (req, res, next) {
 
     Database.agregarPunto(req.body.punto);
 
-    res.render('resultado', {titulo: 'Resultado', resultado: 'El punto ha sido modificado exitosamente!'});
+    res.render('resultado', {titulo: 'Resultado', resultado: 'El punto ha sido agregado exitosamente!'});
 
 });
 

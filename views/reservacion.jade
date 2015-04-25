@@ -1,0 +1,68 @@
+extends layout
+
+block extraHeader
+    <script src="/js/jquery-2.1.3.min.js"></script>
+
+block content
+    .container-fluid
+        .row
+            .col-xs-10.col-sm-6.col-md-4.center.fondo
+                h1 Reservacion de viajes
+                
+                form.form-baja-buses.text-center(action="/confirmarReservacion", method="post")
+                    h2 Nueva reservacion
+                    br
+                    label Bus:
+                        select(name="bus" required)
+                            each bus, i in buses
+                                option(value=JSON.parse(JSON.stringify(bus)).BUS) !{JSON.parse(JSON.stringify(bus)).PLACA}
+                    br
+                    br
+                    label Origen:
+                        select(name="origen" required)
+                            each punto, i in puntos
+                                option(value=JSON.parse(JSON.stringify(punto)).PUNTO) !{JSON.parse(JSON.stringify(punto)).NOMBRE}
+                    br
+                    br
+                    label Destino:
+                        select(name="destino" required)
+                            each punto, i in puntos
+                                option(value=JSON.parse(JSON.stringify(punto)).PUNTO) !{JSON.parse(JSON.stringify(punto)).NOMBRE}
+                    br
+                    br
+                    label Puntos:
+                        select(name="pela")
+                            each punto, i in puntosAsignados
+                                option(value=JSON.parse(JSON.stringify(punto)).PUNTO) !{JSON.parse(JSON.stringify(punto)).NOMBRE}
+                    br
+                    br
+                    label Salida:
+                        input(name="salida" type="date")
+                    br
+                    br
+                    label Llegada:
+                        input(name="llegada" type="date")
+                        input(type="hidden", name="idUsuario", value="#{codigoUsuario}")
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit") Asignar viaje
+                    br
+                    br
+                br
+                br
+                form.form-modifica-buses.text-center(action="/agregaPunto", method="post")
+                    br
+                    br
+                    label Agregar punto:
+                        select(name="punto" required)
+                            each punto, i in puntos
+                                option(value=JSON.parse(JSON.stringify(punto)).PUNTO) !{JSON.parse(JSON.stringify(punto)).NOMBRE}
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit") Asignar punto a viaje
+                br
+                br
+                    
+                        
+                    
+                a(href='/') Cerrar sesión

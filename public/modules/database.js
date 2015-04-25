@@ -65,6 +65,12 @@ DB.prototype.getPuntos = function(data,callback){
    });
 }
 
+DB.prototype.insertarReserva = function(data){
+   var Query = queries.insertReserva;
+   var Data  = data;
+   runQuery(Query,Data);
+}
+
 DB.prototype.getPuntosAsignados = function(data,callback){
    var Query = queries.cargarPuntosAsignados;
    var Data  = data;
@@ -109,6 +115,12 @@ DB.prototype.ingresaRutaActual = function(data){
 
 DB.prototype.asociarPuntos = function(data){
    var Query = queries.asociarPunto;
+   var Data  = data;
+   runQuery(Query,Data);
+}
+
+DB.prototype.asociarPuntosReserva = function(data){
+   var Query = queries.puntosReserva;
    var Data  = data;
    runQuery(Query,Data);
 }
@@ -162,6 +174,15 @@ DB.prototype.cargarRutas = function(data,callback){
 
 DB.prototype.obtenerRuta = function(data,callback){
    var Query = queries.obtenRuta;
+   var Data  = data;
+   runQuery(Query,Data,function(res){
+      res = res.pop();
+      callback(res);
+   });
+}
+
+DB.prototype.obtenerReserva = function(data,callback){
+   var Query = queries.obtenReserva;
    var Data  = data;
    runQuery(Query,Data,function(res){
       res = res.pop();

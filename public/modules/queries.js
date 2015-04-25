@@ -48,6 +48,9 @@ exports.obtenBus = obtenBus;
 var obtenRuta = "SELECT max(ruta) as toca FROM ruta;";
 exports.obtenRuta = obtenRuta;
 
+var obtenReserva = "SELECT max(reservacion) as toca FROM reservacion;";
+exports.obtenReserva = obtenReserva;
+
 var obtenBus2 = "SELECT * FROM bus WHERE PLACA = ?;";
 exports.obtenBus2 = obtenBus2;
 
@@ -65,3 +68,9 @@ exports.ingresarRutaActual = ingresarRutaActual;
 
 var reporteAsignaciones = "SELECT BUS.BUS, BUS.PLACA, P1.NOMBRE AS ORIGEN, P2.NOMBRE AS DESTINO, BUS_RUTA.ESTADO, BUS_RUTA.FECHA FROM BUS, PUNTO P1, PUNTO P2, BUS_RUTA, RUTA WHERE P1.PUNTO = RUTA.ORIGEN AND P2.PUNTO = RUTA.DESTINO AND RUTA.RUTA = BUS_RUTA.RUTA AND BUS_RUTA.BUS = BUS.BUS;";
 exports.reporteAsignaciones = reporteAsignaciones;
+
+var insertReserva = "INSERT INTO RESERVACION (USUARIO, INICIO, FINAL, ESTADO, SALIDA, LLEGADA, BUS) VALUES (?, ?, ?, 'PENDIENTE', ?, ?, ?);";
+exports.insertReserva = insertReserva;
+
+var puntosReserva = "INSERT INTO RESERVACION_PUNTO (RESERVACION, PUNTO, PRECIO) VALUES (?, ?, 50);";
+exports.puntosReserva = puntosReserva;
