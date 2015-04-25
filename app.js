@@ -10,6 +10,8 @@ var users = require('./routes/users');
 var inicio = require('./routes/inicio');
 var resultado = require('./routes/resultado');
 var eliminar = require('./routes/eliminar');
+var modificar = require('./routes/modificar');
+var modificarBus = require('./routes/modificarBus');
 
 var app = express();
 
@@ -30,6 +32,8 @@ app.use('/users', users);
 app.use('/inicio', inicio);
 app.use('/resultado', resultado);
 app.use('/eliminar', eliminar);
+app.use('/modificar', modificar);
+app.use('/modificarBus', modificarBus);
 
 
 // catch 404 and forward to error handler

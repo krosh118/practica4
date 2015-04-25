@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    .container-fluid
+        .row
+            .col-xs-10.col-sm-6.col-md-4.center
+                form.form-modifica-buses.text-center(action="/modificarBus", method="post")
+                    h2.custom Modificar bus
+                    br
+                    label Número de placa anterior:
+                        input.input-block-level.center(type="text", name="anterior", value="#{placa}")
+                    br
+                    br
+                    label Número de placa:
+                        input.input-block-level.center(type="text", name="placa", value="#{placa}" required)
+                    br
+                    br
+                    label Tipo de bus:
+                        select(name="tipo" required)
+                            option(value='1') Económico
+                            option(value='2') Empresarial
+                    br
+                    br
+                    label Capacidad del bus:
+                        select(name="capacidad" required)
+                            option(value='1') 45
+                            option(value='2') 35
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit" name="nuevo") Modificar bus
+                    br
+                    br
+                    a(href="/index") Regresar
+    

@@ -20,3 +20,12 @@ exports.insertBus = insertBus;
 
 var delBus = "DELETE FROM bus WHERE BUS = ?;";
 exports.delBus = delBus;
+
+var obtenBus = "SELECT * FROM bus WHERE BUS = ?;";
+exports.obtenBus = obtenBus;
+
+var obtenBus2 = "SELECT * FROM bus WHERE PLACA = ?;";
+exports.obtenBus2 = obtenBus2;
+
+var updateBus = "UPDATE BUS SET PLACA = ?, TIPO = ?, CAPACIDAD = ? WHERE BUS = ?;";
+exports.updateBus = updateBus;

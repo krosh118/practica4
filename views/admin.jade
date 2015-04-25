@@ -46,7 +46,7 @@ block content
                     br
                 br
                 br
-                form.form-modifica-buses.text-center(action="/inicio", method="post")
+                form.form-modifica-buses.text-center(action="/modificar", method="post")
                     h2 Modificar
                     br
                     label Número de placa:
@@ -55,7 +55,7 @@ block content
                                 option(value=JSON.parse(JSON.stringify(bus)).BUS ) !{JSON.parse(JSON.stringify(bus)).PLACA}
                     br
                     br
-                    button.btn.btn-large.btn-primary(type="submit") Eliminar bus
+                    button.btn.btn-large.btn-primary(type="submit") Modificar bus
                     br
                     br
                     

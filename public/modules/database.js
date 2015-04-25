@@ -75,4 +75,30 @@ DB.prototype.eliminarBus = function(data){
    runQuery(Query,Data);
 }
 
+DB.prototype.obtenerBus = function(data,callback){
+   var Query = queries.obtenBus;
+   var Data  = data;
+   console.log(Query);
+   console.log(Data);
+   runQuery(Query,Data,function(res){
+      res = res.pop();
+      callback(res);
+   });
+}
+
+DB.prototype.obtenerBus2 = function(data,callback){
+   var Query = queries.obtenBus2;
+   var Data  = data;
+   runQuery(Query,Data,function(res){
+      res = res.pop();
+      callback(res);
+   });
+}
+
+DB.prototype.actualizarBus = function(data){
+   var Query = queries.updateBus;
+   var Data  = data;
+   runQuery(Query,Data);
+}
+
 module.exports = DB;
