@@ -22,6 +22,8 @@ var crearReservacion = require('./routes/crearReservacion');
 var confirmarReservacion = require('./routes/confirmarReservacion');
 var realizarPago = require('./routes/realizarPago');
 var pago = require('./routes/pago');
+var verFactura = require('./routes/verFactura');
+var detalles = require('./routes/detalles');
 
 var app = express();
 
@@ -54,6 +56,8 @@ app.use('/crearReservacion', crearReservacion);
 app.use('/confirmarReservacion', confirmarReservacion);
 app.use('/realizarPago', realizarPago);
 app.use('/pago', pago);
+app.use('/verFactura', verFactura);
+app.use('/detalles', detalles);
 
 
 // catch 404 and forward to error handler

@@ -1,0 +1,49 @@
+extends layout
+
+block extraHeader
+    <script src="/js/jquery-2.1.3.min.js"></script>
+
+block content
+    .container-fluid
+        .row
+            .col-xs-12.col-sm-12.col-md-8.center.fondo
+                h1 Estado de cuenta
+                br
+                table(align="center" border="1")
+                
+                    tr
+                        td  Factura:
+                        td  Origen:
+                        td  Destino:
+                        td  Salida:
+                        td  Llegada:
+                        td  Bus:
+                        td  Monto:
+                        td  Fecha:
+                    
+                    each factura, i in facturas
+                        tr
+                            td !{JSON.parse(JSON.stringify(factura)).FACTURA}
+                            td !{JSON.parse(JSON.stringify(factura)).ORIGEN}
+                            td !{JSON.parse(JSON.stringify(factura)).DESTINO}
+                            td !{JSON.parse(JSON.stringify(factura)).SALIDA}
+                            td !{JSON.parse(JSON.stringify(factura)).LLEGADA}
+                            td !{JSON.parse(JSON.stringify(factura)).PLACA}
+                            td !{JSON.parse(JSON.stringify(factura)).MONTO}
+                            td !{JSON.parse(JSON.stringify(factura)).FECHA}
+                br
+                form.form-nuevo-buses.text-center(action="/detalles", method="post")
+                    br
+                    br
+                    label Factura:
+                        select(name="facturaEscogida" required)
+                            each factura, i in facturas
+                                option(value=JSON.parse(JSON.stringify(factura)).FACTURA) !{JSON.parse(JSON.stringify(factura)).FACTURA}
+                    br
+                    br
+                    input(type="hidden", name="idUsuario", value="#{codigoUsuario}")
+                    button.btn.btn-large.btn-primary(type="submit") Ver detalles factura
+                    br
+                    br
+                    
+                a(href='/') Cerrar sesión

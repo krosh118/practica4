@@ -176,6 +176,22 @@ DB.prototype.obtenerBus = function(data,callback){
    });
 }
 
+DB.prototype.obtenerFacturas = function(data,callback){
+   var Query = queries.obtainFacturas;
+   var Data  = data;
+   runQuery(Query,Data,function(res){
+      callback(res);
+   });
+}
+
+DB.prototype.obtenerDetalles = function(data,callback){
+   var Query = queries.obtainDetalles;
+   var Data  = data;
+   runQuery(Query,Data,function(res){
+      callback(res);
+   });
+}
+
 DB.prototype.cargarRutas = function(data,callback){
    var Query = queries.cargarRuta;
    var Data  = data;
