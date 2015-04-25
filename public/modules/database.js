@@ -49,6 +49,14 @@ DB.prototype.getCredencialesValidas = function(data,callback){
    });
 }
 
+DB.prototype.getBuses = function(data,callback){
+   var Query = queries.cargarBuses;
+   var Data  = data;
+   runQuery(Query,Data,function(res){
+      callback(res);
+   });
+}
+
 DB.prototype.saveSingleData = function(data){
    var Query = queries.SQLSAVESINGLEDATA;
    var Data  = data;

@@ -1,0 +1,63 @@
+extends layout
+
+block extraHeader
+    <script src="/js/jquery-2.1.3.min.js"></script>
+
+block content
+    .container-fluid
+        .row
+            .col-xs-10.col-sm-6.col-md-4.center.fondo
+                h1 Gestión de autobuses
+                form.form-nuevo-buses.text-center(action="/inicio", method="post")
+                    h2 Nuevo
+                    br
+                    label Número de placa:
+                        input.input-block-level.center(type="text", name="placa", placeholder="Placa" required)
+                    br
+                    br
+                    label Tipo de bus:
+                        select(name='tipo' required)
+                            option(value='1') Económico
+                            option(value='2') Empresarial
+                    br
+                    br
+                    label Capacidad del bus:
+                        select(name='capacidad' required)
+                            option(value='1') 45
+                            option(value='2') 35
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit") Agregar bus
+                    br
+                    br
+                br
+                br
+                form.form-baja-buses.text-center(action="/inicio", method="post")
+                    h2 Eliminar
+                    br
+                    label Número de placa:
+                        select(name="placaBorrar" required)
+                            each bus, i in JSON.parse(buses)
+                                option(value=JSON.parse(JSON.stringify(bus)).BUS ) !{JSON.parse(JSON.stringify(bus)).PLACA}
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit") Eliminar bus
+                    br
+                    br
+                br
+                br
+                form.form-modifica-buses.text-center(action="/inicio", method="post")
+                    h2 Modificar
+                    br
+                    label Número de placa:
+                        select(name="placaModificar" required)
+                            each bus, i in JSON.parse(buses)
+                                option(value=JSON.parse(JSON.stringify(bus)).BUS ) !{JSON.parse(JSON.stringify(bus)).PLACA}
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit") Eliminar bus
+                    br
+                    br
+                    
+                a(href='/') Cerrar sesión
+

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    .container-fluid
+        .row
+            .col-xs-10.col-sm-6.col-md-4.center.fondo
+                h1= title
+                p Pantalla de cliente
+                p El nombre es #{nombre}
+                p El password es #{password}
+                  
+                a(href='/') Cerrar sesión

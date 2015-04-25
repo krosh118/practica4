@@ -19,12 +19,17 @@ router.post('/', function (req, res, next) {
         
         if (res2 != null) {
 
-            if (res2.TIPO == 1) {
-
-                res.render('login', {titulo: 'Práctica 4', nombre: res2.NOMBRE, password: res2.PASSWORD});
+            if (res2.TIPO == 2) {
+                
+                res.render('cliente', {titulo: 'Práctica 4', nombre: res2.NOMBRE, password: res2.PASSWORD});
 
             }else{
                 
+                Database.getBuses('hola', function (res3) {
+                    
+                    res.render('admin', {titulo: 'Práctica 4', nombre: res2.NOMBRE, password: res2.PASSWORD, buses: res3});
+                    
+                });
                 
             }
 

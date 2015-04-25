@@ -11,3 +11,6 @@ exports.SQLSAVESINGLEDATA = SQLSAVESINGLEDATA;
 
 var comprobarCredenciales = "SELECT * FROM usuario WHERE nombre = ? AND password = ?;";
 exports.comprobarCredenciales = comprobarCredenciales;
+
+var cargarBuses = "SELECT * FROM bus;";
+exports.cargarBuses = cargarBuses;
