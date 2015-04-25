@@ -21,14 +21,16 @@ block content
                 form.form-baja-buses.text-center(action="/realizarPago", method="post")
                     h2 Comprar ticket
                     br
+                    input(type="hidden", name="idUsuario", value="#{id}")
                     button.btn.btn-large.btn-primary(type="submit") Adquirir boleto
                     br
                     br
                 br
                 br
-                form.form-modifica-buses.text-center(action="/modificar", method="post")
-                    h2 Consultar viaje
+                form.form-modifica-buses.text-center(action="/verFactura", method="post")
+                    h2 Consultar facturas
                     br
+                    input(type="hidden", name="idUsuario", value="#{id}")
                     button.btn.btn-large.btn-primary(type="submit") Buscar factura
                     br
                     br

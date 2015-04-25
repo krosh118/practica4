@@ -1,0 +1,49 @@
+extends layout
+
+block extraHeader
+    <script src="/js/jquery-2.1.3.min.js"></script>
+
+block content
+    .container-fluid
+        .row
+            .col-xs-12.col-sm-12.col-md-8.center.fondo
+                h1 Reservaciones de viajes
+                br
+                table(align="center" border="1")
+                
+                    tr
+                        td  Reservacion:
+                        td  Inicio:
+                        td  Final:
+                        td  Estado:
+                        td  Salida:
+                        td  Llegada:
+                        td  Bus:
+                        td  Total:
+                    
+                    each reserva, i in reservas
+                        tr
+                            td !{JSON.parse(JSON.stringify(reserva)).RESERVACION}
+                            td !{JSON.parse(JSON.stringify(reserva)).INICIO}
+                            td !{JSON.parse(JSON.stringify(reserva)).FINAL}
+                            td !{JSON.parse(JSON.stringify(reserva)).ESTADO}
+                            td !{JSON.parse(JSON.stringify(reserva)).SALIDA}
+                            td !{JSON.parse(JSON.stringify(reserva)).LLEGADA}
+                            td !{JSON.parse(JSON.stringify(reserva)).PLACA}
+                            td !{JSON.parse(JSON.stringify(reserva)).TOTAL}
+                br
+                form.form-nuevo-buses.text-center(action="/pago", method="post")
+                    br
+                    br
+                    label Reservación:
+                        select(name="reservaEscogida" required)
+                            each reserva, i in reservas
+                                option(value=JSON.parse(JSON.stringify(reserva)).RESERVACION) !{JSON.parse(JSON.stringify(reserva)).RESERVACION}
+                    br
+                    br
+                    input(type="hidden", name="idUsuario", value="#{codigoUsuario}")
+                    button.btn.btn-large.btn-primary(type="submit") Comprar boleto
+                    br
+                    br
+                    
+                a(href='/') Cerrar sesión

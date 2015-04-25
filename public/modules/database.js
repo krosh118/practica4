@@ -155,6 +155,18 @@ DB.prototype.eliminarBus = function(data){
    runQuery(Query,Data);
 }
 
+DB.prototype.insertarFactura = function(data){
+   var Query = queries.insertFactura;
+   var Data  = data;
+   runQuery(Query,Data);
+}
+
+DB.prototype.actualizarReserva = function(data){
+   var Query = queries.upReserva;
+   var Data  = data;
+   runQuery(Query,Data);
+}
+
 DB.prototype.obtenerBus = function(data,callback){
    var Query = queries.obtenBus;
    var Data  = data;
@@ -168,6 +180,23 @@ DB.prototype.cargarRutas = function(data,callback){
    var Query = queries.cargarRuta;
    var Data  = data;
    runQuery(Query,Data,function(res){
+      callback(res);
+   });
+}
+
+DB.prototype.cargarReservaciones = function(data,callback){
+   var Query = queries.cargarReservas;
+   var Data  = data;
+   runQuery(Query,Data,function(res){
+      callback(res);
+   });
+}
+
+DB.prototype.obtenerMonto = function(data,callback){
+   var Query = queries.obtainMonto;
+   var Data  = data;
+   runQuery(Query,Data,function(res){
+      res = res.pop();
       callback(res);
    });
 }

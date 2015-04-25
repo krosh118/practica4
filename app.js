@@ -20,6 +20,8 @@ var relacionRutaBus = require('./routes/relacionRutaBus');
 var historialRuta = require('./routes/historialRuta');
 var crearReservacion = require('./routes/crearReservacion');
 var confirmarReservacion = require('./routes/confirmarReservacion');
+var realizarPago = require('./routes/realizarPago');
+var pago = require('./routes/pago');
 
 var app = express();
 
@@ -50,6 +52,8 @@ app.use('/relacionRutaBus', relacionRutaBus);
 app.use('/historialRuta', historialRuta);
 app.use('/crearReservacion', crearReservacion);
 app.use('/confirmarReservacion', confirmarReservacion);
+app.use('/realizarPago', realizarPago);
+app.use('/pago', pago);
 
 
 // catch 404 and forward to error handler
