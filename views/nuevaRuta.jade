@@ -1,0 +1,53 @@
+extends layout
+
+block extraHeader
+    <script src="/js/jquery-2.1.3.min.js"></script>
+
+block content
+    .container-fluid
+        .row
+            .col-xs-10.col-sm-6.col-md-4.center.fondo
+                h1 Gestión de autobuses
+                
+                form.form-baja-buses.text-center(action="/crearRuta", method="post")
+                    h2 Nueva ruta
+                    br
+                    label Origen:
+                        select(name="origen" required)
+                            each punto, i in puntos
+                                option(value=JSON.parse(JSON.stringify(punto)).PUNTO) !{JSON.parse(JSON.stringify(punto)).NOMBRE}
+                    br
+                    br
+                    label Destino:
+                        select(name="destino" required)
+                            each punto, i in puntos
+                                option(value=JSON.parse(JSON.stringify(punto)).PUNTO) !{JSON.parse(JSON.stringify(punto)).NOMBRE}
+                    br
+                    br
+                    label Puntos:
+                        select(name="pela")
+                            each punto, i in puntosAsignados
+                                option(value=JSON.parse(JSON.stringify(punto)).PUNTO) !{JSON.parse(JSON.stringify(punto)).NOMBRE}
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit") Crear nueva Ruta
+                    br
+                    br
+                br
+                br
+                form.form-modifica-buses.text-center(action="/agregaPunto", method="post")
+                    br
+                    br
+                    label Agregar punto:
+                        select(name="punto" required)
+                            each punto, i in puntos
+                                option(value=JSON.parse(JSON.stringify(punto)).PUNTO) !{JSON.parse(JSON.stringify(punto)).NOMBRE}
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit") Asignar punto a ruta
+                br
+                br
+                    
+                        
+                    
+                a(href='/') Cerrar sesión

@@ -58,6 +58,37 @@ block content
                     button.btn.btn-large.btn-primary(type="submit") Modificar bus
                     br
                     br
+                br
+                br
+                    
+        .row
+            .col-xs-10.col-sm-6.col-md-4.center.fondo
+                h1 Gestión de rutas
+                form.form-nuevo-buses.text-center(action="/nuevaRuta", method="post")
+                    h2 Nueva ruta
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit" name="nuevo") Crear nueva ruta
+                    br
+                    br
+                br
+                br
+                form.form-modifica-buses.text-center(action="/asignarRuta", method="post")
+                    h2 Asignar ruta
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit" name="nuevo") Asignar ruta
+                    br
+                    br
+                br
+                br
+                form.form-baja-buses.text-center(action="/historialRuta", method="post")
+                    h2 Ver historial de rutas
+                    br
+                    br
+                    button.btn.btn-large.btn-primary(type="submit" name="nuevo") Crear nueva ruta
+                    br
+                    br
+                
                     
                 a(href='/') Cerrar sesión
-

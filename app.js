@@ -12,6 +12,9 @@ var resultado = require('./routes/resultado');
 var eliminar = require('./routes/eliminar');
 var modificar = require('./routes/modificar');
 var modificarBus = require('./routes/modificarBus');
+var nuevaRuta = require('./routes/nuevaRuta');
+var agregaPunto = require('./routes/agregaPunto');
+var crearRuta = require('./routes/crearRuta');
 
 var app = express();
 
@@ -34,6 +37,9 @@ app.use('/resultado', resultado);
 app.use('/eliminar', eliminar);
 app.use('/modificar', modificar);
 app.use('/modificarBus', modificarBus);
+app.use('/nuevaRuta', nuevaRuta);
+app.use('/agregaPunto', agregaPunto);
+app.use('/crearRuta', crearRuta);
 
 
 // catch 404 and forward to error handler
