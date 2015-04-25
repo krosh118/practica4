@@ -69,4 +69,10 @@ DB.prototype.insertarBus = function(data){
    runQuery(Query,Data);
 }
 
+DB.prototype.eliminarBus = function(data){
+   var Query = queries.delBus;
+   var Data  = data;
+   runQuery(Query,Data);
+}
+
 module.exports = DB;

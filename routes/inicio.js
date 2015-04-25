@@ -46,7 +46,7 @@ router.post('/', function (req, res, next) {
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('Login', { nombre: 'Anibal Gramajo', usuario:nombreUsuario });
+  res.render('index', {titulo: 'Inicio', error: ''});
 });
 
 module.exports = router;

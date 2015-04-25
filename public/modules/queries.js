@@ -17,3 +17,6 @@ exports.cargarBuses = cargarBuses;
 
 var insertBus = "INSERT INTO bus (placa , tipo, capacidad)VALUES (?,?,?)";
 exports.insertBus = insertBus;
+
+var delBus = "DELETE FROM bus WHERE BUS = ?;";
+exports.delBus = delBus;
